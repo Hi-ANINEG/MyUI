@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>ANINEGのUI</title>
+    <link rel='Shortcut Icon' type='image/x-icon' href='./img/windows.ico'>
+    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
+    <link href="./css/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="./component/layer-v3.0.3/layer/layer.js"></script>
+    <link rel="stylesheet" href="./component/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="./css/default.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/win10.js"></script>
+    <style>
+        * {
+            font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
+        }
+
+        /*磁贴自定义样式*/
+         .win10-block-content-text {
+             line-height: 44px;
+             text-align: center;
+             font-size: 16px;
+         }
+    </style>
+    <script>
+        Win10.onReady(function () {
+
+            //设置壁纸
+            Win10.setBgUrl({
+                main: './img/wallpapers/main.jpg',
+                mobile: './img/wallpapers/mobile.jpg',
+            });
+
+            Win10.setAnimated([
+                'animated flip',
+                'animated bounceIn',
+            ], 0.01);
+			
+            setTimeout(function () {
+                Win10.openUrl('https://comment.anineg.space/','<i class="fa fa-newspaper-o icon blue"></i>留言板',[['500px', '580px'],'rt'])
+            },2000);			
+
+            setTimeout(function () {
+                Win10.newMsg('欢迎使用', '欢迎访问ANINEGの小屋：<a target="_blank" href="https://anineg.space/">anineg.space</a>')
+            }, 2500);
+			
+			setTimeout(function () {
+                Win10.newMsg('来玩玩摸鱼小游戏？', '开始菜单里有好多小游戏哦！（游戏来源：<a target="_blank" href="https://haiyong.site/moyu/">海拥的博客</a>）')
+            }, 10000);
+			
+        });
+		
+        function win10_forgive_me() {
+            Win10.enableFullScreen();
+            layer.alert('点击展示下一版本特性', {}, function(index){
+                var blue=$('<img src="./img/presentation/bluescreen.jpg" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
+                setTimeout(function () {
+                    $('body').append(blue);
+                },3000);
+                setTimeout(function () {
+                    blue.remove();
+                    Win10.disableFullScreen();
+                    setTimeout(function () {
+                        layer.msg('开个玩笑啦，别打我');
+
+                    },1000);
+                },7000);
+                layer.close(index);
+            });
+
+        }
+		
+    </script>
+</head>
+<body>
+<div id="win10">
+    <div class="desktop">
+        <div id="win10-shortcuts" class="shortcuts-hidden">
+            <div class="shortcut" onclick="Win10.openUrl('https://anineg.space/','<img class=\'icon\' src=\'./img/icon/blogger.png\'/>ANINEGの小屋')">
+                <img class="icon" src="./img/icon/blogger.png"/>
+                <div class="title">ANINEGの小屋</div>
+            </div>
+            <div class="shortcut" onclick='Win10.openUrl("./pages/login.html","<i class=\"fa fa-user icon black-green\"></i>登录页")'>
+                <i class="fa fa-user icon black-green"></i>
+                <div class="title">后台登录页</div>
+            </div>
+        </div>
+        <div id="win10-desktop-scene"></div>
+    </div>
+    <div id="win10-menu" class="hidden">
+        <div class="list win10-menu-hidden animated animated-slideOutLeft">
+          <div class="item" ><i class="blue icon fa fa-gavel fa-fw"></i>摸鱼小游戏</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/xbw','小霸王街机游戏')">小霸王街机游戏</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/weixiandehuoche/','危险货车')">危险货车</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/wzzc/','亡者之城')">亡者之城</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/hjkg/','黄金矿工')">黄金矿工</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/tegong/','特工卡尔施')">特工卡尔施</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/magicegg/','魔法蛋')">魔法蛋</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/feiyue/','飞越天险')">飞越天险</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/guangtouqiang/','光头强')">光头强</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/taikong/','太空跑酷')">太空跑酷</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/hjkg/','菜单代码生成器')">菜单代码生成器</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/flddsy/','弗莱迪的物理实验')">弗莱迪的物理实验</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/qishi/','骑士冒险')">骑士冒险</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/100/','是男人就下100层')">是男人就下100层</div>
+			<div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/mdtw/','墓地逃亡')">墓地逃亡</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/senlin/','森林协奏曲')">森林协奏曲</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/xiangqi/','中国象棋')">中国象棋</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/paoku/','城堡小兵跑酷')">城堡小兵跑酷</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/hlxz/','红蓝旋转')">红蓝旋转</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/weijing/','维京战争')">维京战争</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://wanghao221.github.io/shuiguorenzhe/','水果忍者')">水果忍者</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://wanghao221.github.io/buyudaren/','捕鱼达人')">捕鱼达人</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://wanghao221.github.io/mario/','超级玛丽')">超级玛丽</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/tiaofangzi.html','跳房子')">跳房子</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/SpaceHuggers/','射击游戏')">第三人称射击游戏</div>
+			<div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/yigedoubunengsi/','一个都不能死')">个都不能死</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/saiche/','赛车')">赛车</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/shitoujiandaobu','石头剪刀布')">石头剪刀布</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/guomalu.html','过马路')">过马路</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/2048.html','2048')">2048</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/zhipaijiyi.html','记忆纸牌')">记忆纸牌</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/baohujidan.html','保护鸡蛋')">护鸡蛋</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/laganziguoguan','拉杆子过关')">拉杆子过关</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/doudizhu.html','斗地主')">斗地主</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/danzhu.html','弹珠打砖块')">弹珠打砖块</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/qiefangkuai.html','切方块')">切方块</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/baohuduixin.html','保护堆芯')">保护堆芯</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/tower-blocks.html','盖塔楼')">盖塔楼</div>
+			<div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/huaxue.html','户外滑雪')">户外滑雪</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/wu.html','双人五子棋')">双人五子棋</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/chazhen.html','见缝插针')">见缝插针</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/xxoo.html','xxoo')">AI井字棋</div>
+            <div class="sub-item" onclick="Win10.openUrl('https://haiyong.site/moyu/dou.html','吃豆人')">吃豆人</div>
+			
+            <div class="item"
+                 onclick="Win10.exit()">
+                <i class="black icon fa fa-power-off fa-fw"></i><span class="title">关闭</span>
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="menu_group">
+                <div class="title">Welcome</div>
+                <div class="block" loc="1,1" size="6,4" class="block" onclick="win10_forgive_me()">
+                    <div class="content">
+                        <div style="font-size:100px;line-height: 132px;margin: 0 auto ;display: block"
+                             class="fa fa-fw fa-windows win10-block-content-text"></div>
+                        <div class="win10-block-content-text" style="font-size: 22px">欢迎使用 ANINEGのUI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="win10-menu-switcher"></div>
+    </div>
+    <div id="win10_command_center" class="hidden_right">
+        <div class="title">
+            <h4 style="float: left">消息中心 </h4>
+            <span id="win10_btn_command_center_clean_all">全部清除</span>
+        </div>
+        <div class="msgs"></div>
+    </div>
+    <div id="win10_task_bar">
+        <div id="win10_btn_group_left" class="btn_group">
+            <div id="win10_btn_win" class="btn"><span class="fa fa-windows"></span></div>
+            <div class="btn" id="win10-btn-browser"><span class="fa fa-internet-explorer"></span></div>
+        </div>
+        <div id="win10_btn_group_middle" class="btn_group"></div>
+        <div id="win10_btn_group_right" class="btn_group">
+            <div class="btn" id="win10_btn_time"></div>
+            <div class="btn" id="win10_btn_command"><span id="win10-msg-nof" class="fa fa-comment-o"></span></div>
+            <div class="btn" id="win10_btn_show_desktop"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

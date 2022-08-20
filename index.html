@@ -39,7 +39,7 @@
             ], 0.01);
 			
             setTimeout(function () {
-                Win10.openUrl('https://comment.anineg.space/','<i class="fa fa-newspaper-o icon blue"></i>留言板',[['500px', '580px'],'rt'])
+                Win10.openUrl('https://comment.anineg.space/','<i class="fa fa-newspaper-o icon blue"></i>留言板',[['500px', '600px'],'rt'])
             },2000);			
 
             setTimeout(function () {
@@ -49,12 +49,16 @@
 			setTimeout(function () {
                 Win10.newMsg('来玩玩摸鱼小游戏？', '开始菜单里有好多小游戏哦！（游戏来源：<a target="_blank" href="https://haiyong.site/moyu/">海拥的博客</a>）')
             }, 10000);
+		
+			setTimeout(function () {
+                Win10.newMsg('全屏效果更佳哦！', '全屏效果更佳哦！按F11或者在页面上右键试试吧！')
+            }, 20000);
 			
         });
 		
         function win10_forgive_me() {
             Win10.enableFullScreen();
-            layer.alert('点击展示下一版本特性', {}, function(index){
+            layer.alert('点击展示一下版本特性', {}, function(index){
                 var blue=$('<img src="./img/presentation/bluescreen.jpg" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
                 setTimeout(function () {
                     $('body').append(blue);

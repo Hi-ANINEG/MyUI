@@ -36,11 +36,7 @@
             Win10.setAnimated([
                 'animated flip',
                 'animated bounceIn',
-            ], 0.01);
-			
-            setTimeout(function () {
-                Win10.openUrl('https://comment.anineg.space/','<i class="fa fa-newspaper-o icon blue"></i>留言板',[['500px', '600px'],'rt'])
-            },2000);			
+            ], 0.01);		
 
             setTimeout(function () {
                 Win10.newMsg('欢迎使用', '欢迎访问ANINEGの小屋：<a target="_blank" href="https://anineg.space/">anineg.space</a>')
@@ -89,6 +85,10 @@
             <div class="shortcut" onclick='Win10.openUrl("./pages/login.html","<i class=\"fa fa-user icon black-green\"></i>登录页")'>
                 <i class="fa fa-user icon black-green"></i>
                 <div class="title">后台登录页</div>
+            </div>
+	    <div class="shortcut" onclick='Win10.openUrl("https://comment.anineg.space/","<i class=\"fa fa-newspaper-o icon blue\"></i>留言板")'>
+                <i class="fa fa-newspaper-o icon blue"></i>
+                <div class="title">留言板</div>
             </div>
 	        <div class="shortcut" onclick="Win10.openUrl('https://www.bilibili.com/','<img class=\'icon\' src=\'./img/icon/bilibili.png\'/>哔哩哔哩')">
                 <img class="icon" src="./img/icon/bilibili.png"/>
